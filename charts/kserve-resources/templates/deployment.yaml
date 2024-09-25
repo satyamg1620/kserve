@@ -71,7 +71,7 @@ spec:
           httpGet:
             path: /healthz
             port: 8081
-          timeoutSeconds: 5
+          timeoutSeconds: 500
         readinessProbe:
           initialDelaySeconds: 10
           failureThreshold: 10
@@ -79,7 +79,7 @@ spec:
           httpGet:
             path: /readyz
             port: 8081
-          timeoutSeconds: 5
+          timeoutSeconds: 500
         resources:
 {{- if .Values.kserve.controller.resources }}
 {{ toYaml .Values.kserve.controller.resources | trim | indent 12 }}
